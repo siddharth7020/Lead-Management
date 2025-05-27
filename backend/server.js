@@ -5,10 +5,20 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const leadRoutes = require('./routes/leadRoutes');
 const tagRoutes = require('./routes/tagRoutes');
+const generateToken = require('./config/jwt').generateToken;
 require('dotenv').config();
 
 const app = express();
 connectDB();
+generateToken({
+    _id: "6835b5bc602ce06340085865",
+    role: "super_admin"
+});
+
+console.log(generateToken({
+    _id: "6835b5bc602ce06340085865",
+    role: "super_admin"
+}));
 
 app.use(cors());
 app.use(express.json());

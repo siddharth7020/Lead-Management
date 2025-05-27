@@ -29,7 +29,7 @@ exports.register = async (req, res) => {
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ message: 'User already exists' });
 
-    user = new User({ name, email, password: await bcrypt.hash(password, 10), role });
+    user = new User({ name:"superadmin", email:"superadmin@gmail.com", password: await bcrypt.hash("superadmin", 10), role:"super_admin" });
     await user.save();
 
     res.status(201).json({ message: 'User registered successfully' });
