@@ -20,7 +20,10 @@ console.log(generateToken({
     role: "super_admin"
 }));
 
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:5173", "https://lead-management-31rl.onrender.com"],
+    credentials: true
+  }))
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
