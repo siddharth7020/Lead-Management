@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://lead-management-backend-qszb.onrender.com',
         changeOrigin: true,
         secure: false,
       },
