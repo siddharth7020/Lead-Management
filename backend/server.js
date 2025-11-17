@@ -21,7 +21,7 @@ console.log(generateToken({
 }));
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://lead-management-31rl.onrender.com"],
+    origin: ["https://lead-management-31rl.onrender.com"],
     credentials: true
   }))
 app.use(express.json());
